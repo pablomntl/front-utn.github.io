@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medio de transporte</title>
+</head>
+<body>
+	  <div>
+           <h1 id="metros"></h1>
+	  </div>
+    <script>
+		let metros = '';
+		let  transporte = '';
+		metros = prompt('ingrese la cantidad de metros que debe recorrer', '');
+		if (metros > 0 && metros <= 1000) {
+			transporte = 'pie';
+		} else if (metros > 1000 && metros <= 10000) {
+			transporte =  'bicicleta';
+		} else if (metros > 10000 && metros <= 30000) {
+			transporte =  'colectivo';
+		} else if (metros > 30000 && metros <= 100000) {
+			transporte =  'auto';
+		} else if (metros > 100000 ) {
+			transporte =  'avion';
+		} 
+        function retornar (){
+			document.getElementById('metros').innerHTML = `para ${metros} metros recomendamos ir en ${transporte} `
+			
+		}
+		retornar();     
+       
+		
+		
+        
+    </script>
+</body>
+</html>
