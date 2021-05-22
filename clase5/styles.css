@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.cuadrado {
+    height: 100px;
+    width: 100px;
+}
+
+.indianred {
+    background-color: indianred;
+}
+
+.DarkSalmon {
+    background-color: DarkSalmon;
+}
+
+.rebeccapurple {
+    background-color: rebeccapurple;
+}
