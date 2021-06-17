@@ -1,21 +1,29 @@
-<h1>Contactanos</h1>
-<p>{{title}}</p>
+<div class="contenedor-contacto">
+  <div class="content">
+    <div class="form-title">
+      <h1>Contactanos</h1>
+      <p>{{title}}</p>
+    </div>
+    <div class="formulario">
+      <form action="/contacto" method="POST">
+        <label for=" fname">Nombre</label>
+        <input type="text" id="fname" name="firstname" placeholder="Nombre" />
 
-<div class="content">
-  <form action="/>
-    <label for="fname">Nombre</label>
-    <input type="text" id="fname" name="firstname" placeholder="Nombre..">
+        <label for="lname">Apellido</label>
+        <input type="text" id="lname" name="lastname" placeholder="Apellido" />
+        <label for="email">E-mail</label>
+        <input type="text" name="email" placeholder="Nombre@gmail.com" />
+        <label for="tel">Teléfono</label>
+        <input type="text" name="tel" placeholder="+54	(011) - 1111111" />
+        <label for="mensaje"></label>
+        <textarea name="mensaje" id="" class="text-a" placeholder="Dejanos tu mensaje"></textarea>
+        <input type="submit" value="enviar" />
+      </form>
+    </div>
+    <div class="mensaje">
+      <h3>{{validaciones}}</h3>
+    </div>
 
-    <label for="lname">Apellido</label>
-    <input type="text" id="lname" name="lastname" placeholder="Apellido..">
+  </div>
 
-    <label for="localidad">Localidad</label>
-    <select id="localidad" name="localidad">
-      <option value="Lomasdez">Lomas de Zamora</option>
-      <option value="florenv">Florencio Varela</option>
-      <option value="quilmes">Quilmes</option>
-    </select>
-  
-    <input type="submit" value="enviar">
-  </form>
 </div>

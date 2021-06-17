@@ -12,6 +12,7 @@ var serviciosRouter = require('./routes/servicios');
 var contactoRouter = require('./routes/contacto');
 
 var app = express();
+var env = require('dotenv').config();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
