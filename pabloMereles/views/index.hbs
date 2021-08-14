@@ -1,0 +1,49 @@
+<section class="container-fluid">
+    <div id="home" class="row align-items-center portada">
+        <div class="col-lg-4 offset-lg-2">
+            <p>Bienvenidos</p>
+            <h1>Pablo Mereles</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, quam est dolore maiores in nam eum
+                blanditiis minus possimus modi, odio voluptas commodi cum obcaecati necessitatibus accusantium saepe
+                ipsam magnam.</p>
+        </div>
+    </div> {{!fin de portadd}}
+
+    <div id="novedades" class="row py-4 align-items-center personalizar">
+        <div class=" col-12 col-md-5 offset-md-1  offset-lg-2 py-3">
+            <h2>Novedades</h2>
+            <ul class="lista-novedades">
+                {{#each novedades}}
+                <li><a href="javascript:void(0)" data-target="#modal{{id}}"><img src="{{image}}" width="120" alt="">{{
+                        titulo }}</a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    {{#each novedades}}
+    <div class="modal fade" id="modal{{id}}" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdrop">{{ titulo }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h2>{{ subtitulo }}</h2>
+                    <img src="{{imagen}}" alt="">
+                    <p>{{ cuerpo }}</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    {{/each}}
+
+</section>

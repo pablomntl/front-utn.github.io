@@ -1,0 +1,245 @@
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">BEER X</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" data-scroll href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-scroll href="#novedades">Novedades</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-scroll href="#historia">Historia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-scroll href="#nosotros">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-scroll href="#conocenos">Conocenos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid ">
+        <div id="home" class="row align-items-center hero">
+            <div class="col-lg-3 offset-lg-2">
+                <p>Bajada</p>
+                <h1>Título Principal</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, quam est dolore maiores in nam eum
+                    blanditiis minus possimus modi, odio voluptas commodi cum obcaecati necessitatibus accusantium saepe
+                    ipsam magnam.</p>
+            </div>
+        </div>
+
+        <!--Novedades-->
+        <div id="novedades" class="row py-4">
+            <div class="col-md-5 offset-md-2 py-3">
+                <h2>Novedades</h2>
+                <ul class="lista-novedades">
+                    {{#each novedades}}
+                  <li><a href="javascript:void(0)" data-toggle="modal" data-target="#modal{{id}}"><img src="{{imagen}}" width="120" alt=""> {{ titulo }}</a>
+                 </li>
+                    {{/each}}
+                </ul>
+           </div>
+             
+            {{#each novedades}}
+            <!-- Modal -->
+            <div class="modal fade" id="modal{{id}}" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdrop">{{ titulo }}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h2>{{ subtitulo }}</h2>
+                            <img src="{{imagen}}">
+                            <p>{{ cuerpo }}</p>
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+            </div>
+            {{/each}}
+
+            <!--testimonios-->
+            <div class="col-md-3">
+                <div class="rounded py-3 testimonios">
+                    <h2 class="text-center">Testimonios</h2>
+
+                    <!--carousel-->
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonio">
+                                    <h5>!La mejor birra del mundo</h5>
+                                    <p>Pablo, Lomas de Zamora</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonio">
+                                    <h5>!La mejor birra del mundo</h5>
+                                    <p>Pablo, Lomas de Zamora</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonio">
+                                    <h5>!La mejor birra del mundo</h5>
+                                    <p>Pablo, Lomas de Zamora</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <!--fin carousel-->
+
+                </div>
+            </div>
+            <!--cierra testimonios-->
+
+        </div>
+        <!--cierra novedades-->
+
+        <div id="historia" class="row align-items-center py-4">
+            <div class="col-lg-2 col-md-3 offset-lg-2 d-none d-sm-block">
+                <img src="images/historia_1.jpg" alt="Historia 1" class="img-fluid">
+            </div>
+            <div class="col-lg-2 col-md-3 d-none d-sm-block">
+                <img src="images/historia_2.jpg" alt="Historia 2" class="img-fluid">
+            </div>
+            <div class="col-12 d-sm-none">
+                <img src="images/historia_3.jpg" alt="Historia 3" class="img-fluid">
+            </div>
+            <div class="col-lg-4 col-md-6 mt-4 mt-sm-0">
+                <h2>Historia</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias sequi doloremque enim natus nemo
+                    nihil laborum in soluta consectetur reprehenderit libero, quos ex omnis molestiae veritatis pariatur
+                    commodi eligendi! Sed!</p>
+            </div>
+        </div>
+        <!--cierra historia-->
+
+
+        <!--section Nosotros-->
+        <div id="nosotros" class="row align-items-strecht my-3 staff py-4 ">
+            <div class="col-lg-8 offset-lg-2">
+                <h2>Nosotros</h2>
+                <div class="card-deck">
+                    <div class="card">
+                        <img src="images/nosotros01.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Diana Reyes</h5>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis magni perspiciatis beatae
+                                voluptatum numquam autem dignissimos facilis temporibus sapiente. </p>
+                        </div>
+                    </div>
+                    <!--card-->
+
+                    <div class="card">
+                        <img src="images/nosotros02.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Pablo Mereles</h5>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis magni perspiciatis beatae
+                                voluptatum numquam autem dignissimos facilis temporibus sapiente..</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/nosotros03.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Juan Vallejos</h5>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis magni perspiciatis beatae
+                                voluptatum numquam autem dignissimos facilis temporibus sapiente. .</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="images/nosotros04.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">Cesar Romero</h5>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis magni perspiciatis beatae
+                                voluptatum numquam autem dignissimos facilis temporibus sapiente. .</p>
+                        </div>
+                    </div>
+                </div>
+                <!--cierra card-deck-->
+            </div>
+        </div>
+        <!--cierra div nosotros-->
+
+
+        <div id="conocenos" class="row py-4">
+            <div class="col-md-4 offset-md-2">
+                <h2>Visitanos</h2>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2100532417726!2d-58.42230558524336!3d-34.59884956474652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca7cd54f107b%3A0x88bd8fe0e0b6e3a6!2sCentro%20de%20e-Learning%20UTN%20BA!5e0!3m2!1ses-419!2sar!4v1622119558553!5m2!1ses-419!2sar"
+                        style="border:0;" allowfullscreen=""></iframe>
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-4 mt-sm-0">
+                <h2>Contactanos</h2>
+
+
+                <form action="/" method="POST">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" class="form-control" id="apellido" placeholder="Apellido" name="apellido">
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="ejemplo@email.com" name="email">
+                    </div>
+                    <div class="form-group ">
+                        <label for="tel">Tel</label>
+                        <input type="text" class="form-control" id="tel" placeholder="" name="tel">
+                    </div>
+                    <div class="form-group ">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea class="form-control" id="mensaje" rows="4" name="comentarios" ></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary">Enviar</button>
+            </div>
+            </form>
+            {{message}}
+        </div>
+    </div>
+    <!--conocenos-->
+
+
+
+    </div> <!-- cierra el contenedor fluido grande-->
+
+    {{!-- <footer>
+        <p>Flavia Ursino</p>
+    </footer> --}}
+
