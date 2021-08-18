@@ -10,8 +10,8 @@ router.get('/', async function(req, res, next) {
   novedades = novedades.splice(0,5);
   novedades = novedades.map(novedad => {
     if(novedad.img_id){
-      const imagen = cloudinary.url(novedad.img_id, {
-        width: 460,
+      var imagen = cloudinary.url(novedad.img_id, {
+        width: 450,
         crop: 'fill'
       });
       return {

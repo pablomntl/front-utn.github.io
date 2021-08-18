@@ -1,14 +1,4 @@
 var pool = require ('./bd');
- async function getProductos () {
-     var query = "select * from productos";
-     var rows = await pool.query(query);
-     return rows;
- }
- async function getProductoById (id){
-    var query = "select * from productos where id = '";
-    var rows = await pool.query(query, [id]);
-    return rows[0];
- }
 
 
 async function getNovedades () {
@@ -23,7 +13,7 @@ async function getNovedadById (id) {
 }
 
 async function deleteNovedadById(id){
-    var query = "delete form novedades where id = ?";
+    var query = "delete from novedades where id = ?";
     var rows = await pool.query(query, [id]);
     return rows;
 }
@@ -50,4 +40,4 @@ async function deleteNovedadById(id){
 
 
 
-module.exports = { getNovedades, deleteNovedadById, getNovedadById, modificarNovedadById, insertNovedad, getProductos, getProductoById}
+module.exports = { getNovedades, deleteNovedadById, getNovedadById, modificarNovedadById, insertNovedad}

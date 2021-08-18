@@ -16,6 +16,21 @@
         <div class="col-5 text-right">
             <a href="/admin/novedades/agregar" class="btn btn-success"> <i class="fa fa-plus"></i>Nuevo</a>
         </div>
+        <div class="col-3 col-md-6">
+            <form action="/admin/novedades" class="form-inline my-2 my-lg-0" method="GET">
+            <input type="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q" value="{{q}}">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+            </form>
+            {{#if is_search}}
+                {{#unless novedades.lenght}}
+                    No se encontraron resultados para " <strong>{{q}}</strong>"
+                {{/unless}}
+            {{/if}}    
+
+            <input type="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search" name="q" {{#if q}}value="{{q}}"{{/if}} >    
+        </div>
     </div>
 
     <div class="row" style="margin-top: 5px;">
@@ -40,7 +55,7 @@
                             <a href="/admin/novedades/modificar/{{id}}" class="btn btn-secondary" title="editar" class="btn btn-secondary">
                                 <i class="fa fa-pencil"></i>
                             </a>
-                            <a href=""  title="eliminar" class="btn btn-secondary">
+                            <a href="/admin/novedades/eliminar/{{id}}"  title="eliminar" class="btn btn-secondary">
                                 <i class="fa fa-trash"></i>
                             </a>
                         </td>

@@ -3,8 +3,8 @@
 <div class="row">
     <div class="col-12 col-sm-12 col-md-12 ">
         <h4>Agregar Modificación</h4>
-        <form action="/admin/novedades/modificar" method="post">
-        <input type="hidden" value="{{novedad.id}}">
+        <form action="/admin/novedades/modificar" method="post" enctype="multipart/form-data">
+        <input type="hidden" value="{{novedad.id}}" name="id">
 
         <div class="form-group mt-3">
             <input type="text" class="form-control" placeholder="Título" name="titulo" value="{{novedad.titulo}}" >
@@ -34,7 +34,8 @@
          </div>
 
         </form>
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <input class="btn btn-primary" type="submit" value="Guardar">
+        {{!-- <button type="submit" class="btn btn-primary">Guardar</button> --}}
     </div>
      {{#if error}}
         <h5>{{ message }}</h5>

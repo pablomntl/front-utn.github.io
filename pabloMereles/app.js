@@ -7,7 +7,7 @@ var logger = require('morgan');
 require('dotenv').config();
 
 var session = require('express-session');
-// var fileUpload = require('express-fileupload');
+var fileUpload = require('express-fileupload');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -39,10 +39,10 @@ app.use(session({
   saveUninitialized:true
 }));
 
-// app.use(fileUpload({
-//   useTempFiles: true,
-//   tempFileDir: '/tmp/'
-// }));
+app.use(fileUpload({
+  useTempFiles: true,
+  tempFileDir: '/tmp/'
+}));
 
 secured = async (req, res, next) => {
   try {
@@ -64,7 +64,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin/login', loginRouter);
 app.use('/admin/novedades', secured, adminRouter);
-
 app.use('/productos', productosRouter);
 app.use('/nosotros', nosotrosRouter);
 app.use('/contacto', contactoRouter);
