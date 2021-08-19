@@ -29,14 +29,6 @@ router.get('/', async function(req, res, next) {
   res.render('index', { novedades
   } );
 });
-/* GET home page. */
-// router.get('/', async function(req, res, next) {
-//   var novedades = await novedadesModel.getNovedades();
-   
-//  res.render('index', {
-//    novedades
-//  });
-// });
 
  
 router.post('/', async (req, res, next) => {

@@ -26,9 +26,8 @@ body{overflow-x:hidden;}
   min-height: 600px;
   color: rgb(19, 15, 15);
 }
-
-.portada h1, h2, p {
-  color: #dadada;
+.titulo_principal, .parrafo_titulo {
+  color: #fff;
 }
 h1, h2 {
   font-family: 'Poppins', sans-serif;
@@ -98,5 +97,5 @@ p {
 
 footer {
 
-  background-color: #393E46;
+  background-color: ;
 }

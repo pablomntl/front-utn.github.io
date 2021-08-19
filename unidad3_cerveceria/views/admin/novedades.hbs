@@ -2,10 +2,11 @@
 
     <div class="row ">
         <div class="col-12 ">
-            <p class="text-right"> 
+            <p class="text-right">
                 <span>Hola {{usuario}} !</span>
-                
-                <a href="/admin/login/logout" class="btn btn-sm btn-danger"> <i class="fa fa-sign-out"></i> Cerrar sesión</a>
+
+                <a href="/admin/login/logout" class="btn btn-sm btn-danger"> <i class="fa fa-sign-out"></i> Cerrar
+                    sesión</a>
             </p>
         </div>
     </div>
@@ -13,23 +14,17 @@
         <div class="col-7" style="margin-top:-9px;">
             <h4>Listado de novedades</h4>
         </div>
-        <div class="col-5 text-right">
+        <div class="col-2 text-right">
             <a href="/admin/novedades/agregar" class="btn btn-success"> <i class="fa fa-plus"></i>Nuevo</a>
         </div>
-        <div class="col-3 col-md-6">
+        <div class="col-3 text-right">
             <form action="/admin/novedades" class="form-inline my-2 my-lg-0" method="GET">
-            <input type="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q" value="{{q}}">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">
-                <i class="fa fa-search"></i>
-            </button>
+                <input type="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                    name="q" value="{{q}}">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
             </form>
-            {{#if is_search}}
-                {{#unless novedades.lenght}}
-                    No se encontraron resultados para " <strong>{{q}}</strong>"
-                {{/unless}}
-            {{/if}}    
-
-            <input type="search" class="form-control mr-sm-2" placeholder="Search" aria-label="Search" name="q" {{#if q}}value="{{q}}"{{/if}} >    
         </div>
     </div>
 
@@ -38,13 +33,13 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Titulo</th>
-                    <th scope="col">Imagen</th>
-                    <th scope="col" class="text-center">Acciones</th>
+                        <th scope="col">#</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col" class="text-center">Acciones</th>
                     </tr>
                 </thead>
-       
+
                 <tbody>
                     {{#each novedades}}
                     <tr>
@@ -52,10 +47,11 @@
                         <td>{{ titulo }}</td>
                         <td>{{{imagen}}}</td>
                         <td class="text-right">
-                            <a href="/admin/novedades/modificar/{{id}}" class="btn btn-secondary" title="editar" class="btn btn-secondary">
+                            <a href="/admin/novedades/modificar/{{id}}" class="btn btn-secondary" title="editar"
+                                class="btn btn-secondary">
                                 <i class="fa fa-pencil"></i>
                             </a>
-                            <a href="/admin/novedades/eliminar/{{id}}"  title="eliminar" class="btn btn-secondary">
+                            <a href="/admin/novedades/eliminar/{{id}}" title="eliminar" class="btn btn-secondary">
                                 <i class="fa fa-trash"></i>
                             </a>
                         </td>
@@ -63,6 +59,12 @@
                     {{/each}}
                 </tbody>
             </table>
+            
+            {{#if is_search}}
+            {{#unless novedades.lenght}}
+            No se encontraron resultados para " <strong>{{q}}</strong>"
+            {{/unless}}
+            {{/if}}
         </div>
     </div>
 

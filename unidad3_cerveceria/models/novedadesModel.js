@@ -1,11 +1,6 @@
 
 var pool = require('./bd');
 
-async function buscarNovedades(busqueda) {
-    var query = "select * from novedades where titulo like ? OR subtitulo like ? OR cuerpo like ?";
-    var rows = await pool.query(query, ['%' + busqueda + '%', '%' + busqueda + '%', '%' + busqueda + '%']);
-    return rows;
-}
 
 
 async function getNovedades () {
@@ -15,9 +10,9 @@ async function getNovedades () {
 }
 
 async function getNovedadById (id){
-    var query = "select * from novedades where id = ?";
+    var query = "select * from novedades where id =?";
     var rows = await pool.query(query, [id]);
-    return rows;
+    return rows[0];
 }
 
 async function deleteNovedadById(id){
@@ -45,6 +40,12 @@ async function modificarNovedadById(obj, id) {
     } catch (error) {
         throw error;
     }
+}
+
+async function buscarNovedades(busqueda) {
+    var query = "select * from novedades where titulo like ? OR subtitulo like ? OR cuerpo like ?";
+    var rows = await pool.query(query, ['%' + busqueda + '%', '%' + busqueda + '%', '%' + busqueda + '%']);
+    return rows;
 }
 
 
